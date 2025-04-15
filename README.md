@@ -1,23 +1,26 @@
-# PEDPF <img src="https://icai.ai/wp-content/uploads/2020/01/AIRLabAmsterdam-10-6-gecomprimeerd-transparant.png" width="300" alt="Airlab Amsterdam" align="right"> #
+# An Ensemble Framework for Probabilistic Short-Term Load Forecasting Based on BiTCN and Deep Attention Networks #
 
-_Parameter Efficient Deep Probabilistic Forecasting_ (PEDPF) is a repository containing code to run experiments for several deep learning based probabilistic forecasting methods. For more details, see [our paper](https://arxiv.org/abs/2112.02905).
+
+_An Ensemble Framework for Probabilistic Short-Term Load Forecasting Based on BiTCN and Deep Attention Networks_ is a repository containing code for a new forecasting method for power load forecasting.  This architecture is trained and tested against state of the art methods using the code provided by the paper of to [Parameter Efficient Deep Probabilistic Forecasting (PEDPF)](https://www.sciencedirect.com/science/article/pii/S0169207021001850). For more details, see [our paper](https://www.techrxiv.org/doi/full/10.36227/techrxiv.174235483.35557269).
+
+<img src="figures/bitcn_deep_att_skip.jpg" alt="Experimental Setup" width="50%" />
+
 
 ### Reproduce paper's experiments ###
-First, you need to download the necessary data files.
+First, you need to download the necessary data file.
 * [UCI Electricity](https://archive.ics.uci.edu/ml/machine-learning-databases/00321/) Download and extract `LD2011_2014.txt` to the folder `data\uci_electricity\` (create if necessary).
-* [UCI Traffic](https://archive.ics.uci.edu/ml/machine-learning-databases/00204/) Download and extract to the folder `data\uci_traffic\`. Run `create_df.py` to create the dataset from the source files.
-* [Kaggle Favorita](https://www.kaggle.com/c/favorita-grocery-sales-forecasting/data) Download and extract all files to the folder `data\kaggle_favorita` and run `prepare_favorita_v3.py` (NB: there is some code missing here, this needs to be fixed).
-* [Kaggle Webtraffic](https://www.kaggle.com/c/web-traffic-time-series-forecasting/data) Download and extract all files to the folder `data\kaggle_webtraffic` and run `prepare_webtraffic.py`.
 
-Then, run `experiments\train.py` for the paper's main results. This will sequentially run all the experiments as listed in the `experiments\{dataset_name}\experiments_{dataset_name}.csv` file. Hence, to change parameters or create more experiments, it is easiest to adjust this `.csv` file.
+Then, run `train_test_electricity.py` for the paper's main results. This will sequentially run all variants of the suggested model (different hidden unit sizes : 10,15,20,25,30). 
 
-The other experiments can be run using the variants of `experiments\train_{}.py`. Note that some of these variants require installing additional dependencies as well as creating new folders manually.
+Then you can refer to `paper figure generator.ipynb` to generate the figures of the paper.
+
+
 
 ### Reference ###
-[Olivier Sprangers](mailto:o.r.sprangers@uva.nl), Sebastian Schelter, Maarten de Rijke. [Parameter Efficient Deep Probabilistic Forecasting](https://arxiv.org/abs/2112.02905). Accepted as journal paper to [International Journal of Forecasting](https://www.journals.elsevier.com/international-journal-of-forecasting).
+[Bilel Benziane](mailto:bilel.benziane@isen-ouest.yncrea.fr), Benoit Lardeux, Maher Jridi, Ayoub Mcharek. [An Ensemble Framework for Probabilistic Short-Term Load Forecasting Based on BiTCN and Deep Attention Networks](https://www.techrxiv.org/doi/full/10.36227/techrxiv.174235483.35557269). Submitted as a journal paper to [InternaIEEE Transactions on Power Systems](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=59).
 
 ### License ###
-This project is licensed under the terms of the [Apache 2.0 license](https://github.com/elephaint/pgbm/blob/main/LICENSE).
+This project is licensed under the terms of the [Apache 2.0 license](https://github.com/elephaint/pedpf/blob/master/LICENSE).
 
 ### Acknowledgements ###
-This project was developed by [Airlab Amsterdam](https://icai.ai/airlab/).
+This project was a contribution of a new forecast architecture tested on the experimental protocol developed by [Airlab Amsterdam](https://icai.ai/airlab/).
