@@ -29,7 +29,7 @@ _An Ensemble Framework for Probabilistic Short-Term Load Forecasting Based on Bi
    ```bash
    python train_test_electricity.py
    ```
-Then you can refer to `paper figure generator.ipynb` to generate the figures of the paper.
+3. Then you can refer to `paper figure generator.ipynb` to generate the figures of the paper.
 
 
 
