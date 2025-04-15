@@ -5,6 +5,14 @@ _An Ensemble Framework for Probabilistic Short-Term Load Forecasting Based on Bi
 
 <img src="figures/bitcn_deep_att_skip.jpg" alt="Experimental Setup" width="80%" />
 
+### Added files ###
+├── algorithms/
+│   ├── bitcn_att_skip.py       # BiTCN with skip connections and deep attention
+│   └── bitcn_att_no_skip.py    # BiTCN with deep attention but no skip connections
+│
+├── train_test_electricity.py   # Main training and evaluation script for electricity dataset
+├── paper figure generator.ipynb # Notebook to generate figures from paper results
+
 
 ### Reproduce paper's experiments ###
 First, you need to download the necessary data file.
