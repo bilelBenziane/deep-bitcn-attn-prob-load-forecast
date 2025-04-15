@@ -3,7 +3,7 @@
 
 _An Ensemble Framework for Probabilistic Short-Term Load Forecasting Based on BiTCN and Deep Attention Networks_ is a repository containing code for a new forecasting method for power load forecasting.  This architecture is trained and tested against state of the art methods using the code provided by the paper of to [Parameter Efficient Deep Probabilistic Forecasting (PEDPF)](https://www.sciencedirect.com/science/article/pii/S0169207021001850). For more details, see [our paper](https://www.techrxiv.org/doi/full/10.36227/techrxiv.174235483.35557269).
 
-<img src="figures/bitcn_deep_att_skip.jpg" alt="Experimental Setup" width="50%" />
+<img src="figures/bitcn_deep_att_skip.jpg" alt="Experimental Setup" width="80%" />
 
 
 ### Reproduce paper's experiments ###
