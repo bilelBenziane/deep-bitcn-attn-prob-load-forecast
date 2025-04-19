@@ -6,10 +6,6 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '3'
 import csv
 import matplotlib.pyplot as plt
 import time
-from ConfigSpace import Configuration, ConfigurationSpace
-from ConfigSpace.hyperparameters import UniformFloatHyperparameter, UniformIntegerHyperparameter,CategoricalHyperparameter
-from smac import HyperparameterOptimizationFacade, Scenario
-
 
 import torch
 import torch.optim as optim
@@ -20,7 +16,6 @@ from lib.train import loop
 from data.datasets import timeseries_dataset
 import pandas as pd
 import warnings
-from pyswarm import pso
 import time
 
 
@@ -80,9 +75,9 @@ algorithm = 'bitcn_att_skip'
 
 # main loop to test different version of this architecture
 time_per_cong=[]
-for learning_rate in [0.001]:
-    for batch_size in [64]:
-         for d_hidden in [10,15,20,25,30]:
+for learning_rate in [0.001]: # you can fine tune it using different values (usually 0.0001, 0.0005, 0.001 )
+    for batch_size in [64]: #you can fine tune it using other values (64,128,256,512)
+         for d_hidden in [25]: #you cna fine tune it usqing other values like 5,10;15;20;25;30,....
             start_time = time.time()    
              
             for seed in  [0,1,2,3,4]:
@@ -153,7 +148,8 @@ for learning_rate in [0.001]:
                 _, loss_test, yhat_tot, y_tot, x_tot, df_test = loop(model, test_set, optimizer, batch_size, id_samples_test, train=False, metrics=True, scaling=scaling)    
                 df_test.to_csv(filename + '_test.csv')
                         
-                        
+
+            end_time = time.time()
             elapsed_time = end_time - start_time
 
             # Convert to hours, minutes, and seconds

@@ -42,7 +42,7 @@ def fix_seed(seed):
 
 # Calculate and show metrics
 def calc_metrics(yhat, y, quantiles):
-    df = pd.DataFrame(columns={'RMSE','NRMSE','ND','MAPE','sMAPE','QuantileLoss','Quantile'})
+    df = pd.DataFrame(columns=['RMSE','NRMSE','ND','MAPE','sMAPE','QuantileLoss','Quantile'])
     df.loc[:, 'Quantile'] = quantiles
     for q, quantile in enumerate(quantiles):
         df.loc[q, 'RMSE'] = RMSE(y, yhat[q])

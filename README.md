@@ -19,17 +19,36 @@ _An Ensemble Framework for Probabilistic Short-Term Load Forecasting Based on Bi
 ---
 
 ### 📈 Reproduce Paper's Experiments
+1. **Prepare a conda environment**:
 
-1. Download the required dataset:
-   - [UCI Electricity](https://archive.ics.uci.edu/ml/machine-learning-databases/00321/)
+   ```bash
+   conda create -n load_forecast_env python=3.10
+   conda activate load_forecast_env
+   pip install numpy==1.24.4
+   pip install pyparsing scipy jinja2 packaging psutil pyyaml tornado joblib pynisher pyrfr
+   pip install scikit-learn==1.3.2
+   pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
+   pip install jupyterlab
+   pip install matplotlib
+   pip install pandas==1.5.3
+
+   ```
+
+2. clone the project
+   ```bash
+   git clone https://github.com/bilelBenziane/deep-bitcn-attn-prob-load-forecast.git
+   cd deep-bitcn-attn-prob-load-forecast
+   ```
+4. Download the required dataset:
+   - [UCI Electricity](https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014)
    - Extract `LD2011_2014.txt` to the folder `data/uci_electricity/` (create the folder if needed)
 
-2. Run the main experiment script:
+5. Run the main experiment script:
 
    ```bash
    python train_test_electricity.py
    ```
-3. Then you can refer to `paper figure generator.ipynb` to generate the figures of the paper.
+6. Then you can refer to `paper figure generator.ipynb` to generate the figures of the paper.
 
 
 
